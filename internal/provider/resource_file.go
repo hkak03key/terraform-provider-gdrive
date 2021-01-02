@@ -10,7 +10,8 @@ import (
 func resourceFile() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
-		Description: "Sample resource in the Terraform provider Gdrive.",
+		Description: `Creates a new file, folder or shorcut inside an existing google drive.
+See the [official API documentation](https://developers.google.com/drive/api/v3/reference).`,
 
 		CreateContext: resourceFileCreate,
 		ReadContext:   resourceFileRead,

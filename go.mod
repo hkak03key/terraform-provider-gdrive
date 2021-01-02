@@ -1,4 +1,4 @@
-module github.com/hashicorp/terraform-provider-scaffolding
+module github.com/hkak03key/terraform-provider-gdrive
 
 go 1.15
 

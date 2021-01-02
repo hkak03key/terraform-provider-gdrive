@@ -7,15 +7,15 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func resourceScaffolding() *schema.Resource {
+func resourceFile() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
-		Description: "Sample resource in the Terraform provider scaffolding.",
+		Description: "Sample resource in the Terraform provider Gdrive.",
 
-		CreateContext: resourceScaffoldingCreate,
-		ReadContext:   resourceScaffoldingRead,
-		UpdateContext: resourceScaffoldingUpdate,
-		DeleteContext: resourceScaffoldingDelete,
+		CreateContext: resourceFileCreate,
+		ReadContext:   resourceFileRead,
+		UpdateContext: resourceFileUpdate,
+		DeleteContext: resourceFileDelete,
 
 		Schema: map[string]*schema.Schema{
 			"sample_attribute": {
@@ -28,7 +28,7 @@ func resourceScaffolding() *schema.Resource {
 	}
 }
 
-func resourceScaffoldingCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceFileCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
@@ -38,21 +38,21 @@ func resourceScaffoldingCreate(ctx context.Context, d *schema.ResourceData, meta
 	return diag.Errorf("not implemented")
 }
 
-func resourceScaffoldingRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceFileRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceScaffoldingUpdate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceFileUpdate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceScaffoldingDelete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceFileDelete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 

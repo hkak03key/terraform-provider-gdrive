@@ -1,0 +1,12 @@
+version: '3'
+services:
+  test:
+    build: .
+    volumes:
+      - ../:/root/terraform-provider-gdrive
+      #- ${CLOUDSDK_CONFIG:-~/.config/gcloud}:/root/.config/gcloud:ro
+      - ../credentials:/root/credentials:ro
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/root/credentials/service_account_credentials.json
+    working_dir: /root/terraform-provider-gdrive
+    entrypoint: ./scripts/check_operation.sh

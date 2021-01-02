@@ -36,3 +36,6 @@ website/vendor
 
 # credentials
 credentials/
+
+# check_opration
+.check_operation/

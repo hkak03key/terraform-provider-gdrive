@@ -1,5 +1,25 @@
 #!/bin/sh
 set -e
+
+if [ "$GOOGLE_APPLICATION_CREDENTIALS" ] && [ ! -f $GOOGLE_APPLICATION_CREDENTIALS ] ; then
+  printf "ERROR: %s is not found.\n" $GOOGLE_APPLICATION_CREDENTIALS
+  exit 1
+fi
+
+ADC_JSON=${CLOUDSDK_CONFIG:-~/.config/gcloud}/application_default_credentials.json
+if [ ! "$GOOGLE_APPLICATION_CREDENTIALS" ] && [ ! -f $ADC_JSON ] ; then
+  printf "WARNING: %s is not found.\ncontinue?" $ADC_JSON
+  while :
+  do
+    read -p "(y/n) > " TEMP
+      case "$TEMP" in
+        [yY]*) break;;
+        [nN]*) printf "exit"; exit 1;;
+        *) continue;;
+      esac
+  done
+fi
+
 make install
 
 TERRAFORM_RUNNING_DIR=.check_operation

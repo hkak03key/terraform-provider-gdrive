@@ -33,3 +33,9 @@ website/vendor
 
 # Keep windows files with windows line endings
 *.winfile eol=crlf
+
+# credentials
+credentials/
+
+# check_opration
+.check_operation/
